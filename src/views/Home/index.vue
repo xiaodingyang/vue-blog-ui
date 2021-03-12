@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <Rain></Rain>
+    <Rain :bg="rainBg"></Rain>
     <el-row type="flex" justify="center">
       <el-col :xs="24" :sm="24" :md="12" :lg="12" :xl="12">
         <div class="main">
@@ -37,7 +37,15 @@ export default {
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐watch监听属性⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
   watch: {},
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐computed计算属性⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
-  computed: {},
+  computed: {
+    rainBg() {
+      const rainBg = this.$store.getters.imgList.filter(
+        (item) => item.imgKey === "webHomeImg"
+      );
+      if (rainBg)
+        return rainBg[0] && rainBg[0].imgList[0] && rainBg[0].imgList[0].url;
+    },
+  },
 };
 </script>
 
@@ -48,6 +56,7 @@ export default {
   justify-content: center;
   height: 100vh;
   width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
   .el-row {
     width: 100%;
   }

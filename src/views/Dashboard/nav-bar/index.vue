@@ -104,7 +104,7 @@ export default {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 2;
+  z-index: 999;
   display: inline-block;
   overflow: hidden;
   .bg {
@@ -162,8 +162,13 @@ export default {
     cursor: pointer;
   }
 }
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 400px;
+// .el-menu-vertical-demo:not(.el-menu--collapse) {
+//   width: 400px;
+// }
+@media only screen and (max-width: 768px) {
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+  }
 }
 @media only screen and (min-width: 768px) {
   .el-menu-vertical-demo:not(.el-menu--collapse) {
@@ -214,14 +219,14 @@ export default {
   padding: 40px 0;
   border-right: none;
   background-color: rgba(0, 0, 0, 0.6);
-  /deep/.el-menu-item:focus,
-  .el-menu-item:hover,
-  .is-active {
-    background: -webkit-linear-gradient(#79f1a4, #0e5cad);
-    color: #fff !important;
-    i {
-      color: #fff;
-    }
+}
+/deep/.el-menu-item:focus,
+.el-menu-item:hover,
+.is-active {
+  background: -webkit-linear-gradient(#79f1a4, #0e5cad);
+  color: #fff !important;
+  i {
+    color: #fff;
   }
 }
 </style>

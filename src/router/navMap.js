@@ -36,15 +36,6 @@ export default [
         },
         component: () => import("@/views/resume/index.vue"),
       },
-      // {
-      //   path: "/liuyan",
-      //   name: "liuyan",
-      //   meta: {
-      //     icon: "el-icon-s-promotion",
-      //     title: "留言",
-      //   },
-      //   component: () => import("@/views/liuyan/index.vue"),
-      // },
       {
         path: "/blog/detail",
         name: "detail",
@@ -54,6 +45,11 @@ export default [
         path: "/blog/tags",
         name: "tags",
         component: () => import("@/views/tags/index.vue"),
+      },
+      {
+        path: "*",
+        name: "404",
+        component: () => import("@/components/error/404.vue"),
       },
     ],
   },

@@ -1,6 +1,9 @@
 <template>
   <div class="rain">
-    <div class="window"></div>
+    <div
+      class="window"
+      :style="`background:url(${bg}) no-repeat center/cover`"
+    ></div>
     <div class="raindrops">
       <div class="borders">
         <div :key="idx" class="border" v-for="(item, idx) in border"></div>
@@ -20,7 +23,12 @@
 <script>
 export default {
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐props⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
-  props: {},
+  props: {
+    bg: {
+      type: String,
+      default: "",
+    },
+  },
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐组件注册⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
   components: {},
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐data数据⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
@@ -63,7 +71,7 @@ export default {
   background-position: 50%;
   -webkit-filter: blur(3px);
   filter: blur(3px);
-  background: url("../../assets/imgs/index-bg.jpg") no-repeat center/cover;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .raindrops,

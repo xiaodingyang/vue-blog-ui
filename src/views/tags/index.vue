@@ -54,12 +54,23 @@ export default {
         }
       });
     },
+    clickSearch(title) {
+      const params = title ? { title } : "";
+      this.$store.dispatch("getBlog", params).then((res) => {
+        if (res) {
+          this.blogList = res;
+        }
+      });
+    },
   },
   computed: {},
   created() {
-    const tag = getQuery(location.search.slice("1")).tag;
+    const search = getQuery(location.search.slice("1"));
+    const tag = search.tag;
+    const title = search.title;
     this.getClass();
-    this.clickClass(tag);
+    if (tag) this.clickClass(tag);
+    if (title) this.clickSearch(title);
   },
 };
 </script>

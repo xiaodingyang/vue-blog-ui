@@ -8,7 +8,7 @@
         size="mini"
       >
       </el-input>
-      <span class="el-icon-search"></span>
+      <span class="el-icon-search" @click="clickSearch"></span>
     </div>
     <div class="card">
       <Card title="前端交流群">
@@ -117,7 +117,11 @@ export default {
     };
   },
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐method方法⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
-  methods: {},
+  methods: {
+    clickSearch() {
+      this.$router.push(`/blog/tags?title=${this.searchForm}`);
+    },
+  },
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐mounted方法⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
   mounted() {},
   //⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐created方法⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐//
@@ -255,7 +259,8 @@ export default {
     }
     .web {
       height: 180px;
-      background: url("../../../assets/imgs/jiaoliu.png") no-repeat center/cover;
+      background: url("https://xiaodingyang-1300707163.cos.ap-chengdu.myqcloud.com/myBlog/jiaoliu.png")
+        no-repeat center/cover;
       background-clip: border-box;
     }
   }

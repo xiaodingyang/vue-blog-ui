@@ -114,12 +114,12 @@ export default {
     &::after {
       content: "";
       display: block;
-      padding-bottom: 15%;
+      padding-bottom: 30%;
     }
   }
 
   .body {
-    padding: 30px;
+    padding: 15px;
     background: #fff;
     border-radius: 5px;
     .top {
@@ -166,5 +166,8 @@ export default {
 }
 /deep/.markdown {
   height: 100vh !important;
+}
+/deep/.markdown-preview {
+  padding: 0 !important;
 }
 </style>
